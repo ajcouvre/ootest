@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        {% if uploaded_files_list %}
+        <ul>
+            {% for file in uploaded_files_list %}
+            <li>
+                <a href="{{ file.url }}">{{file.name}}</a>
+                <p>{{ file.upload_date }}</p>
+
+                {% if file.privacy == 0%}
+                <!-- SOMETHING HERE TO DISPLAY FILE>-->
+                {% else %}
+                <p>File Contents are Private</p>
+                {% endif %}
+            </li>
+                {% endfor %}
+        </ul>
+    
+    </body>
+
+</html>
